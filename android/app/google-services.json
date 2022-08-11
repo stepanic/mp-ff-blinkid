@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "640096252237",
+    "project_id": "ff-blinkid",
+    "storage_bucket": "ff-blinkid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640096252237:android:41314e75c7eef9a7a24704",
+        "android_client_info": {
+          "package_name": "hr.italk.ff.blinkid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640096252237-t6cv0780cippcvtj61mcka69nar6gqs5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hr.italk.ff.blinkid",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "640096252237-c86as9ch89mg97fh27lv2ni71h4lcdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDusiYrpDSqICbux37NlXxIhaHmtlA4Dns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640096252237-c86as9ch89mg97fh27lv2ni71h4lcdgn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640096252237-hvpoems33ijeosj2m4v137ok5u9vcdrl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hr.italk.ff.blinkid"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640096252237:android:cfc69cdbecce2519a24704",
+        "android_client_info": {
+          "package_name": "hr.italk.ff.id.scanning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640096252237-k5b278528eann75f42nfvf0rb1ief4tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hr.italk.ff.id.scanning",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "640096252237-c86as9ch89mg97fh27lv2ni71h4lcdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDusiYrpDSqICbux37NlXxIhaHmtlA4Dns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640096252237-c86as9ch89mg97fh27lv2ni71h4lcdgn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640096252237-hvpoems33ijeosj2m4v137ok5u9vcdrl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hr.italk.ff.blinkid"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
