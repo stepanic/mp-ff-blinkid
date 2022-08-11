@@ -56,7 +56,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       height: double.infinity,
                       iosLicense: FFAppState().BlinkIDiOSLicense,
                       androidLicense: FFAppState().BlinkIDAndroidLicense,
-                      onScanningDone: () async {},
+                      onScanningDone: () async {
+                        setState(() {});
+                      },
                     ),
                   ),
                 ),
