@@ -53,8 +53,12 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
 
     BlinkIdOverlaySettings settings = BlinkIdOverlaySettings();
 
+    print('----- 1');
     var results = await MicroblinkScanner.scanWithCamera(
         RecognizerCollection([idRecognizer]), settings, license);
+    print('----- 2');
+
+    print("Scanning result: " + results.toString());
 
     if (!mounted) return;
 
