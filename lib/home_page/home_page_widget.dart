@@ -1,8 +1,12 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_model.dart';
+export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -12,42 +16,60 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  late HomePageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
-        automaticallyImplyLeading: false,
-        title: Align(
-          alignment: AlignmentDirectional(0, 0),
-          child: Text(
-            FFLocalizations.of(context).getText(
-              'qckk2848' /* BlinkID FF */,
+    context.watch<FFAppState>();
+
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.00, 0.00),
+            child: Text(
+              FFLocalizations.of(context).getText(
+                'qckk2848' /* BlinkID FF */,
+              ),
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                    fontSize: 22.0,
+                  ),
             ),
-            style: FlutterFlowTheme.of(context).title2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                  fontSize: 22,
-                ),
           ),
+          actions: [],
+          centerTitle: false,
+          elevation: 2.0,
         ),
-        actions: [],
-        centerTitle: false,
-        elevation: 2,
-      ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+        body: SafeArea(
+          top: true,
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(0, 0),
+                alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -63,12 +85,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 30,
+                height: 30.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -76,13 +98,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         FFLocalizations.of(context).getText(
                           'djzk7d6g' /* First name from scan:  */,
                         ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: Text(
                           FFAppState().BlinkIDResultFirstName,
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                          style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
                     ],
