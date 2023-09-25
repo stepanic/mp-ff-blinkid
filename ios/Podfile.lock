@@ -1,0 +1,59 @@
+PODS:
+  - blinkid_flutter (5.18.0):
+    - Flutter
+    - PPBlinkID (~> 5.18.0)
+  - Flutter (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - path_provider_ios (0.0.1):
+    - Flutter
+  - PPBlinkID (5.18.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - blinkid_flutter (from `.symlinks/plugins/blinkid_flutter/ios`)
+  - Flutter (from `Flutter`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - PPBlinkID
+
+EXTERNAL SOURCES:
+  blinkid_flutter:
+    :path: ".symlinks/plugins/blinkid_flutter/ios"
+  Flutter:
+    :path: Flutter
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+
+SPEC CHECKSUMS:
+  blinkid_flutter: 87e21231a32b5f85124d3485435beceb7a7d2808
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  PPBlinkID: bcfa15f4a9cf34b0d9e85eb35ed96721bbd48c24
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  url_launcher_ios: 839c58cdb4279282219f5e248c3321761ff3c4de
+
+PODFILE CHECKSUM: 2d003d2a4f4b67e0a26ff44e9ea1b5df6c5e26d8
+
+COCOAPODS: 1.11.3
