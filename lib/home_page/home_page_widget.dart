@@ -49,7 +49,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             alignment: AlignmentDirectional(0.00, 0.00),
             child: Text(
               FFLocalizations.of(context).getText(
-                'qckk2848' /* BlinkID FF */,
+                'qckk2848' /* BlinkID FF v2023.09 */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Poppins',
