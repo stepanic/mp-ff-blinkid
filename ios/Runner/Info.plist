@@ -36,7 +36,7 @@
 
 
 	<key>NSCameraUsageDescription</key>
-      <string>Do you want to allow camera permission?</string>
+    <string>Do you want to allow camera permission?</string>
 
 
 	<key>UILaunchStoryboardName</key>

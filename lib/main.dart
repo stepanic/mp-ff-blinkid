@@ -1,6 +1,9 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
@@ -11,9 +14,13 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
-  FFAppState(); // Initialize FFAppState
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
 
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -35,11 +42,14 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    Future.delayed(
-        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+    Future.delayed(Duration(milliseconds: 1000),
+        () => setState(() => displaySplashImage = false));
   }
 
-  void setLocale(Locale value) => setState(() => _locale = value);
+  void setLocale(String language) {
+    setState(() => _locale = createLocale(language));
+  }
+
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
         FlutterFlowTheme.saveThemeMode(mode);
@@ -57,20 +67,26 @@ class _MyAppState extends State<MyApp> {
       ],
       locale: _locale,
       supportedLocales: const [
-        Locale('en', ''),
-        Locale('hr', ''),
+        Locale('en'),
+        Locale('hr'),
       ],
-      theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        scrollbarTheme: ScrollbarThemeData(),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        scrollbarTheme: ScrollbarThemeData(),
+      ),
       themeMode: _themeMode,
       home: displaySplashImage
-          ? Container(
-              color: Color(0xFF142641),
-              child: Center(
-                child: Builder(
-                  builder: (context) => Image.asset(
+          ? Builder(
+              builder: (context) => Container(
+                color: Color(0xFF142641),
+                child: Center(
+                  child: Image.asset(
                     'assets/images/ff_blinkid_icon.png',
-                    width: 256,
+                    width: 256.0,
                     fit: BoxFit.contain,
                   ),
                 ),
