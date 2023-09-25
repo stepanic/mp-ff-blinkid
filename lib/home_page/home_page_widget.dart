@@ -69,7 +69,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Align(
                 alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -87,30 +87,49 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 30.0,
+                height: 64.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'djzk7d6g' /* First name from scan:  */,
+                            ),
+                            style: FlutterFlowTheme.of(context).bodyMedium,
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.00, 0.00),
+                            child: Text(
+                              FFAppState().BlinkIDResultFirstName,
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Text(
                         FFLocalizations.of(context).getText(
-                          'djzk7d6g' /* First name from scan:  */,
+                          '2yu7ige6' /* NOTE: to display more result f... */,
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).error,
+                            ),
                       ),
-                      Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
-                        child: Text(
-                          FFAppState().BlinkIDResultFirstName,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

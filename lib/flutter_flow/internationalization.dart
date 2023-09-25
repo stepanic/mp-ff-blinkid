@@ -115,6 +115,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'First name from scan: ',
       'hr': '',
     },
+    '2yu7ige6': {
+      'en':
+          'NOTE: to display more result fields, duplicate the previous row with a specific result field key.',
+      'hr': '',
+    },
     '3iarb8v8': {
       'en': 'Home',
       'hr': 'Naslovnica',
