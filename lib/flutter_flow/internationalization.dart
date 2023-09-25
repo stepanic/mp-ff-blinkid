@@ -108,7 +108,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
     'qckk2848': {
-      'en': 'BlinkID FF',
+      'en': 'BlinkID FF v2023.09',
       'hr': 'BlinkID FF',
     },
     'djzk7d6g': {
