@@ -1,7 +1,7 @@
 PODS:
-  - blinkid_flutter (5.18.0):
+  - blinkid_flutter (6.1.1):
     - Flutter
-    - PPBlinkID (~> 5.18.0)
+    - PPBlinkID (~> 6.1.2)
   - Flutter (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -9,7 +9,7 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - PPBlinkID (5.18.0)
+  - PPBlinkID (6.1.2)
   - shared_preferences_ios (0.0.1):
     - Flutter
   - sqflite (0.0.2):
@@ -46,11 +46,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
-  blinkid_flutter: 87e21231a32b5f85124d3485435beceb7a7d2808
+  blinkid_flutter: d4cb7f6a93a741132b1359b2e50f527811cf2775
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
-  PPBlinkID: bcfa15f4a9cf34b0d9e85eb35ed96721bbd48c24
+  PPBlinkID: c757baa64ed024141380a9a87048321215de9964
   shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
