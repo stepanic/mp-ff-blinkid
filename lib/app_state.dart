@@ -23,14 +23,14 @@ class FFAppState extends ChangeNotifier {
   }
 
   String _BlinkIDiOSLicense =
-      'sRwAAAEXaHIuaXRhbGsuZmYuaWQuc2Nhbm5pbmfdbX2qwckoBDx6sH/wLAbo6f+0IgDJ+Tyr7jFId0fnmWWfQfi8UiOxDV0OEuY177TcVz/fRCHnTVYsqtdKMcDPEG9I8C5lWKUsaO6UEJ3zce7mcqSbb2yl8CTbxUbMsl42WE3u7Sob/H7q1EMcE8/+IkN9lBxulbxkNYpJgavlDblhkV2OA/YA2qZ89EC0RIThGYQVIMZTYkylmd5q8ncYpvMDllZH8R06duyCzEA+Uw==';
+      'sRwAAAEXaHIuaXRhbGsuZmYuaWQuc2Nhbm5pbmfdbX2qwckoBDx6sA/0SgbuGoEsNb23BG03/oE5PmL0E6AC/VNUwy3qyBsxK5z5amP9we0scpbgHXtJAxS8jzXNvxN0de3vvxEXWA7MzBKdfH1zVeLEPEwhOWD4oxX+Hn5/WgeR4OmWpxVnFBYR/XQ3pDCAUWHlZ0BQ+kWCCjJUEuky+iMHljiDd2gyLD+VHJWPaABl3DdIp2m5IPLP/SHK21wyJuUJHNA+';
   String get BlinkIDiOSLicense => _BlinkIDiOSLicense;
   set BlinkIDiOSLicense(String _value) {
     _BlinkIDiOSLicense = _value;
   }
 
   String _BlinkIDAndroidLicense =
-      'sRwAAAAXaHIuaXRhbGsuZmYuaWQuc2Nhbm5pbmeZGp+xpiZRGZNOZg8iXAeblQHosl6BDMhUOvrtEOyibl2h8PXiXRQX3V77WxA9HGjBBMg0u4LpEHzsBQ8O3MHgBYvrAtiyyQGlvvt6mAZ6w4Hvxfsp6oz679jcqscZ6mVrmZhH4ZWsLftmTQKyp24DUkaKRvLAy8WFyDnwSdrD+5kJ8mdDOLnBycIpbg/vBTrTEFvHp2Cixu5JbRS6OimfydV1HJVcNP4AZtovVVrIjA==';
+      'sRwAAAAXaHIuaXRhbGsuZmYuaWQuc2Nhbm5pbmeZGp+xpiZRGZNOZn8mOgedqI1F1BFfb4MNee+qAqdAi7lID2h5Qx24J1iSOPcxdKAbOw4nm5GSrQZI7ePzhz80U6wBO7BhAs7Dr0tx/2wWkj4s6AHuUdSzBnP1OTYd+lf+8QzPiiGYxL3aduK+SaJpcrirbJl/X3Ma9n7gHtxeRZm9G8Dz9miIxaFXBlasIuklkDz9jhXBpZp3wrd+D7NAosri8+JhFPQG';
   String get BlinkIDAndroidLicense => _BlinkIDAndroidLicense;
   set BlinkIDAndroidLicense(String _value) {
     _BlinkIDAndroidLicense = _value;

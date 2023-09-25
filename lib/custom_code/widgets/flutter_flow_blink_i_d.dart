@@ -47,20 +47,24 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
       license = "";
     }
 
-    var idRecognizer = BlinkIdCombinedRecognizer();
+    var idRecognizer = BlinkIdMultiSideRecognizer();
     idRecognizer.returnFullDocumentImage = true;
     idRecognizer.returnFaceImage = true;
 
     BlinkIdOverlaySettings settings = BlinkIdOverlaySettings();
 
+    print('----- 1');
     var results = await MicroblinkScanner.scanWithCamera(
         RecognizerCollection([idRecognizer]), settings, license);
+    print('----- 2');
+
+    print("Scanning result: " + results.toString());
 
     if (!mounted) return;
 
     if (results.length == 0) return;
     for (var result in results) {
-      if (result is BlinkIdCombinedRecognizerResult) {
+      if (result is BlinkIdMultiSideRecognizerResult) {
         if (result.mrzResult?.documentType == MrtdDocumentType.Passport) {
           _resultString = getPassportResultString(result);
         } else {
@@ -79,41 +83,47 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
     }
   }
 
-  String getIdResultString(BlinkIdCombinedRecognizerResult result) {
+  String getIdResultString(BlinkIdMultiSideRecognizerResult result) {
     setState(() {
-      FFAppState().BlinkIDResultFirstName = result.firstName ?? "";
-      FFAppState().BlinkIDResultLastName = result.lastName ?? "";
-      FFAppState().BlinkIDResultFullName = result.fullName ?? "";
-      FFAppState().BlinkIDResultLocalizedName = result.localizedName ?? "";
+      FFAppState().BlinkIDResultFirstName = getStringResult(result.firstName);
+      FFAppState().BlinkIDResultLastName = getStringResult(result.lastName);
+      FFAppState().BlinkIDResultFullName = getStringResult(result.fullName);
+      FFAppState().BlinkIDResultLocalizedName =
+          getStringResult(result.localizedName);
       FFAppState().BlinkIDResultAdditionalNameInformation =
-          result.additionalNameInformation ?? "";
-      FFAppState().BlinkIDResultAddress = result.address ?? "";
+          getStringResult(result.additionalNameInformation);
+      FFAppState().BlinkIDResultAddress = getStringResult(result.address);
       FFAppState().BlinkIDResultAdditionalAddressInformation =
-          result.additionalAddressInformation ?? "";
+          getStringResult(result.additionalAddressInformation);
       FFAppState().BlinkIDResultAdditionalAddressInformation =
-          result.additionalAddressInformation ?? "";
-      FFAppState().BlinkIDResultDocumentNumber = result.documentNumber ?? "";
+          getStringResult(result.additionalAddressInformation);
+      FFAppState().BlinkIDResultDocumentNumber =
+          getStringResult(result.documentNumber);
       FFAppState().BlinkIDResultDocumentAdditionalNumber =
-          result.documentAdditionalNumber ?? "";
-      FFAppState().BlinkIDResultSex = result.sex ?? "";
+          getStringResult(result.documentAdditionalNumber);
+      FFAppState().BlinkIDResultSex = getStringResult(result.sex);
       FFAppState().BlinkIDResultIssuingAuthority =
-          result.issuingAuthority ?? "";
-      FFAppState().BlinkIDResultNationality = result.nationality ?? "";
-      FFAppState().BlinkIDResultDateOfBirth = toDateString(result.dateOfBirth);
+          getStringResult(result.issuingAuthority);
+      FFAppState().BlinkIDResultNationality =
+          getStringResult(result.nationality);
+      FFAppState().BlinkIDResultDateOfBirth =
+          toDateResultString(result.dateOfBirth);
       FFAppState().BlinkIDResultAge = result.age ?? 0;
-      FFAppState().BlinkIDResultDateOfIssue = toDateString(result.dateOfIssue);
+      FFAppState().BlinkIDResultDateOfIssue =
+          toDateResultString(result.dateOfIssue);
       FFAppState().BlinkIDResultDateOfExpiry =
-          toDateString(result.dateOfExpiry);
+          toDateResultString(result.dateOfExpiry);
       FFAppState().BlinkIDResultDateOfExpiryPermanent =
           result.dateOfExpiryPermanent ?? false;
-      FFAppState().BlinkIDResultMaritalStatus = result.maritalStatus ?? "";
+      FFAppState().BlinkIDResultMaritalStatus =
+          getStringResult(result.maritalStatus);
       FFAppState().BlinkIDResultPersonalIdNumber =
-          result.personalIdNumber ?? "";
-      FFAppState().BlinkIDResultProfession = result.profession ?? "";
-      FFAppState().BlinkIDResultRace = result.race ?? "";
-      FFAppState().BlinkIDResultReligion = result.religion ?? "";
+          getStringResult(result.personalIdNumber);
+      FFAppState().BlinkIDResultProfession = getStringResult(result.profession);
+      FFAppState().BlinkIDResultRace = getStringResult(result.race);
+      FFAppState().BlinkIDResultReligion = getStringResult(result.religion);
       FFAppState().BlinkIDResultResidentialStatus =
-          result.residentialStatus ?? "";
+          getStringResult(result.residentialStatus);
     });
     widget.onScanningDone();
 
@@ -135,8 +145,9 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
         buildIntResult(result.age, "Age") +
         buildDateResult(result.dateOfIssue, "Date of issue") +
         buildDateResult(result.dateOfExpiry, "Date of expiry") +
-        buildResult(result.dateOfExpiryPermanent.toString(),
-            "Date of expiry permanent") +
+        "Date of expiry permanent: " +
+        result.dateOfExpiryPermanent.toString() +
+        "\n" +
         buildResult(result.maritalStatus, "Martial status") +
         buildResult(result.personalIdNumber, "Personal Id Number") +
         buildResult(result.profession, "Profession") +
@@ -144,7 +155,15 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
         buildResult(result.religion, "Religion") +
         buildResult(result.residentialStatus, "Residential Status") +
         buildDriverLicenseResult(result.driverLicenseDetailedInfo) +
-        buildDataMatchDetailedInfoResult(result.dataMatchDetailedInfo);
+        buildDataMatchResult(result.dataMatchResult);
+  }
+
+  String toDateResultString(DateResult? dateResult) {
+    if (dateResult == null || dateResult.date == null) {
+      return "";
+    }
+
+    return toDateString(dateResult.date);
   }
 
   String toDateString(Date? date) {
@@ -155,7 +174,55 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
     return "${date.year}-${date.month}-${date.day}";
   }
 
-  String buildResult(String? result, String propertyName) {
+  String getStringResult(StringResult? result) {
+    if (result == null ||
+        result.description == null ||
+        result.description!.isEmpty) {
+      return "";
+    }
+
+    return result.description!;
+  }
+
+  String buildResult(StringResult? result, String propertyName) {
+    if (result == null ||
+        result.description == null ||
+        result.description!.isEmpty) {
+      return "";
+    }
+
+    return propertyName + ": " + result.description! + "\n";
+  }
+
+  String buildDateResult(DateResult? result, String propertyName) {
+    if (result == null || result!.date == null || result.date!.year == 0) {
+      return "";
+    }
+
+    return buildResult(result!.originalDateStringResult, propertyName);
+  }
+
+  String buildAdditionalProcessingInfoResult(
+      AdditionalProcessingInfo? result, String propertyName) {
+    if (result == null) {
+      return "empty";
+    }
+
+    final missingMandatoryFields = result.missingMandatoryFields;
+    String returnString = "";
+
+    if (missingMandatoryFields!.isNotEmpty) {
+      returnString = propertyName + ":\n";
+
+      for (var i = 0; i < missingMandatoryFields.length; i++) {
+        returnString += missingMandatoryFields[i].name + "\n";
+      }
+    }
+
+    return returnString;
+  }
+
+  String buildStringResult(String? result, String propertyName) {
     if (result == null || result.isEmpty) {
       return "";
     }
@@ -163,21 +230,12 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
     return propertyName + ": " + result + "\n";
   }
 
-  String buildDateResult(Date? result, String propertyName) {
-    if (result == null || result.year == 0) {
-      return "";
-    }
-
-    return buildResult(
-        "${result.day}.${result.month}.${result.year}", propertyName);
-  }
-
   String buildIntResult(int? result, String propertyName) {
     if (result == null || result < 0) {
       return "";
     }
 
-    return buildResult(result.toString(), propertyName);
+    return propertyName + ": " + result.toString() + "\n";
   }
 
   String buildDriverLicenseResult(DriverLicenseDetailedInfo? result) {
@@ -191,18 +249,19 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
         buildResult(result.conditions, "Conditions");
   }
 
-  String buildDataMatchDetailedInfoResult(DataMatchDetailedInfo? result) {
+  String buildDataMatchResult(DataMatchResult? result) {
     if (result == null) {
       return "";
     }
 
-    return buildResult(result.dateOfBirth?.toString(), "Date of birth") +
-        buildResult(result.dateOfExpiry?.toString(), "Date Of Expiry") +
-        buildResult(result.documentNumber?.toString(), "Document Number") +
-        buildResult(result.dataMatchResult?.toString(), "Data Match Result");
+    return buildStringResult(result.dateOfBirth.toString(), "Date of birth") +
+        buildStringResult(result.dateOfExpiry.toString(), "Date Of Expiry") +
+        buildStringResult(result.documentNumber.toString(), "Document Number") +
+        buildStringResult(result.stateForWholeDocument.toString(),
+            "State For Whole Document");
   }
 
-  String getPassportResultString(BlinkIdCombinedRecognizerResult? result) {
+  String getPassportResultString(BlinkIdMultiSideRecognizerResult? result) {
     if (result == null) {
       return "";
     }
