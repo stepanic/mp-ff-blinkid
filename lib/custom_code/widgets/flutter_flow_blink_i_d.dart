@@ -53,10 +53,10 @@ class _FlutterFlowBlinkIDState extends State<FlutterFlowBlinkID> {
 
     BlinkIdOverlaySettings settings = BlinkIdOverlaySettings();
 
-    print('----- 1');
+    print('----- INIT ----- MicroblinkScanner.scanWithCamera ----- ');
     var results = await MicroblinkScanner.scanWithCamera(
         RecognizerCollection([idRecognizer]), settings, license);
-    print('----- 2');
+    print('----- PARSE ----- BlinkIdMultiSideRecognizerResult ----- ');
 
     print("Scanning result: " + results.toString());
 
