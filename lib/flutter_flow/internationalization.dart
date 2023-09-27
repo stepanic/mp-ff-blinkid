@@ -108,14 +108,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
     'qckk2848': {
-      'en': 'BlinkID FF v2023.09',
+      'en': 'BlinkID FF v2023.09.27',
       'hr': 'BlinkID FF',
     },
     'djzk7d6g': {
       'en': 'First name from scan: ',
       'hr': '',
     },
-    '2yu7ige6': {
+    '9fhvzh9s': {
       'en':
           'NOTE: to display more result fields, duplicate the previous row with a specific result field key.',
       'hr': '',

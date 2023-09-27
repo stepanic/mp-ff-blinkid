@@ -49,7 +49,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             alignment: AlignmentDirectional(0.00, 0.00),
             child: Text(
               FFLocalizations.of(context).getText(
-                'qckk2848' /* BlinkID FF v2023.09 */,
+                'qckk2848' /* BlinkID FF v2023.09.27 */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Poppins',
@@ -119,7 +119,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          '2yu7ige6' /* NOTE: to display more result f... */,
+                          '9fhvzh9s' /* NOTE: to display more result f... */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
