@@ -104,7 +104,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             FFLocalizations.of(context).getText(
                               'djzk7d6g' /* First name from scan:  */,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 24.0,
+                                ),
                           ),
                           Align(
                             alignment: AlignmentDirectional(0.00, 0.00),
