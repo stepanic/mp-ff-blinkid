@@ -1,3 +1,4 @@
+import '/components/dp_demo1_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -10,13 +11,18 @@ class HomePageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for DpDemo1 component.
+  late DpDemo1Model dpDemo1Model;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    dpDemo1Model = createModel(context, () => DpDemo1Model());
+  }
 
   void dispose() {
     unfocusNode.dispose();
+    dpDemo1Model.dispose();
   }
 
   /// Action blocks are added here.
