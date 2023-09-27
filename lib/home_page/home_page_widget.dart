@@ -69,7 +69,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Align(
                 alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -87,7 +87,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 64.0,
+                height: 164.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -132,6 +132,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               fontFamily: 'Poppins',
                               color: FlutterFlowTheme.of(context).error,
                             ),
+                      ),
+                    ),
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondary,
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.00, 0.00),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '85mgnvzi' /* dp 1 */,
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
                       ),
                     ),
                   ],
