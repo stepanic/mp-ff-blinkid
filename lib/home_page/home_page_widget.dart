@@ -1,3 +1,4 @@
+import '/components/dp_demo1_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -134,21 +135,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                       ),
                     ),
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondary,
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            '85mgnvzi' /* dp 1 */,
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        ),
-                      ),
+                    wrapWithModel(
+                      model: _model.dpDemo1Model,
+                      updateCallback: () => setState(() {}),
+                      child: DpDemo1Widget(),
                     ),
                   ],
                 ),
