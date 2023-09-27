@@ -40,7 +40,7 @@ class _DpDemo1WidgetState extends State<DpDemo1Widget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.01, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.01, 0.01, 0.0),
       child: Container(
         width: 100.0,
         height: 100.0,
