@@ -108,7 +108,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
-                                  fontSize: 24.0,
+                                  fontSize: 14.0,
                                 ),
                           ),
                           Align(
