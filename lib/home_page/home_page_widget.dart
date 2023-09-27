@@ -1,3 +1,4 @@
+import '/components/dp_demo1_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -69,7 +70,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Align(
                 alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -87,7 +88,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 64.0,
+                height: 164.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -133,6 +134,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               color: FlutterFlowTheme.of(context).error,
                             ),
                       ),
+                    ),
+                    wrapWithModel(
+                      model: _model.dpDemo1Model,
+                      updateCallback: () => setState(() {}),
+                      child: DpDemo1Widget(),
                     ),
                   ],
                 ),

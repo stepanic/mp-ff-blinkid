@@ -140,6 +140,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hr': 'Skenirati',
     },
   },
+  // DpDemo1
+  {
+    '734wo8md': {
+      'en': 'dp 2',
+      'hr': '',
+    },
+  },
   // Miscellaneous
   {
     '4dqy3lfm': {
