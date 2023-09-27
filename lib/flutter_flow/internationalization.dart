@@ -174,6 +174,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'hr': '',
     },
+    '4a6qybp7': {
+      'en': '',
+      'hr': '',
+    },
+    'sgzaxi7i': {
+      'en': '',
+      'hr': '',
+    },
     'l51cmp01': {
       'en': '',
       'hr': '',
@@ -211,6 +219,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hr': '',
     },
     'kkgsfnwr': {
+      'en': '',
+      'hr': '',
+    },
+    '8xnf5pfd': {
       'en': '',
       'hr': '',
     },
