@@ -120,6 +120,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'NOTE: to display more result fields, duplicate the previous row with a specific result field key.',
       'hr': '',
     },
+    '85mgnvzi': {
+      'en': 'dp 1',
+      'hr': '',
+    },
     '3iarb8v8': {
       'en': 'Home',
       'hr': 'Naslovnica',
