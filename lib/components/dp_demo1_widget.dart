@@ -43,7 +43,13 @@ class _DpDemo1WidgetState extends State<DpDemo1Widget> {
       width: 100.0,
       height: 100.0,
       decoration: BoxDecoration(
+<<<<<<< HEAD
         color: FlutterFlowTheme.of(context).info,
+=======
+        //LOCAL_START
+        color: Colors.red,
+        //LOCAL_END
+>>>>>>> 38ffc693019a1c1b0e16826d2ba5720289542d23
       ),
       child: Align(
         alignment: AlignmentDirectional(0.00, 0.00),
