@@ -43,13 +43,13 @@ class _DpDemo1WidgetState extends State<DpDemo1Widget> {
       width: 100.0,
       height: 100.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).tertiary,
+        color: FlutterFlowTheme.of(context).success,
       ),
       child: Align(
         alignment: AlignmentDirectional(0.00, 0.00),
         child: Text(
           FFLocalizations.of(context).getText(
-            '734wo8md' /* dp 2 */,
+            '734wo8md' /* dp 4 */,
           ),
           style: FlutterFlowTheme.of(context).bodyMedium,
         ),
