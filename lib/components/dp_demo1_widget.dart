@@ -39,19 +39,22 @@ class _DpDemo1WidgetState extends State<DpDemo1Widget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Container(
-      width: 100.0,
-      height: 100.0,
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).info,
-      ),
-      child: Align(
-        alignment: AlignmentDirectional(0.00, 0.00),
-        child: Text(
-          FFLocalizations.of(context).getText(
-            '734wo8md' /* dp 5 */,
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.01, 0.0),
+      child: Container(
+        width: 100.0,
+        height: 100.0,
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).info,
+        ),
+        child: Align(
+          alignment: AlignmentDirectional(0.00, 0.00),
+          child: Text(
+            FFLocalizations.of(context).getText(
+              '734wo8md' /* dp 5 */,
+            ),
+            style: FlutterFlowTheme.of(context).bodyMedium,
           ),
-          style: FlutterFlowTheme.of(context).bodyMedium,
         ),
       ),
     );
